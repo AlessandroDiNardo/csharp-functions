@@ -8,18 +8,19 @@
         {
             Snacks1();
             Snacks2();
+            Snacks3();
         }
 
         //1. void StampaArray(int[] array): che preso un array di numeri interi, stampa a video il contenuto dell’array in questa forma “[elemento 1, elemento 2, elemento 3, ...]
         public static void Snacks1()
         {
             Console.WriteLine("Snack1: ");
-            int[] arrNum = { 12, 23, 34, 45, 56, 67, 78, 89, 90, 101};
-            StampaArray(arrNum);
+            int[] arrNum = { 12, 23, 34, 45, 56, 67, 78, 89, 90, 101}; //creo un array di interi
+            StampaArray(arrNum); //richiamo funzione per stampa array che ha come parametro l'array dichiarato
 
-            static void StampaArray(int[] array)
+            static void StampaArray(int[] array) //funzione per la stampa dell'array che ha come parametro un array di interi
             {
-                for (int i = 0; i < array.Length; i++)
+                for (int i = 0; i < array.Length; i++) //Ciclo per Stampare ogni elemento all'interno dell'array
                 {
                     Console.WriteLine($"Elemento {i + 0}: {array[i]}");
                 }
@@ -32,17 +33,50 @@
         public static void Snacks2()
         {
             Console.WriteLine("Snacks2:");
-            Console.WriteLine("Inserisci un numero: ");
+            Console.WriteLine("Inserisci un numero: "); //Viene chiesto all'utente di inserire un numero
             int num = Convert.ToInt32(Console.ReadLine());
-            Quadrato(num);
+            Quadrato(num); // Richiamo funzione per la stampa del risultato che ha come argomento il numero inserito
 
-            static int Quadrato(int n)
+            static int Quadrato(int n) //Funzione per calcolare il quadrato che ha come argomento un variabile N
             {
-                int res = n * n;
+                int res = n * n; //Calcolo del quadrato del numero inserito
                 Console.WriteLine($"Risultato:{res}");
                 return res;
             }
             Console.WriteLine("");
+        }
+
+
+        //3. int[] ElevaArrayAlQuadrato(int[] array): che preso un array di numeri interi, restituisca un nuovo array con tutti gli elementi elevati quadrato. Attenzione: è importante restituire un nuovo array, e non modificare l’array come parametro della funzione! 
+        public static void Snacks3()
+        {
+            Console.WriteLine("Snacks3: ");
+            int[] numArr = { 2, 3, 4, 5, };
+            StampaArray(numArr);
+            ElevaArrayAlQuadrato(numArr);
+
+            static void StampaArray(int[] array) //funzione per la stampa dell'array che ha come parametro un array di interi
+            {
+                Console.WriteLine("Array originale:");
+                for (int i = 0; i < array.Length; i++) //Ciclo per Stampare ogni elemento all'interno dell'array
+                {
+                    Console.WriteLine($"Elemento {i + 0}: {array[i]}");
+                }
+                Console.WriteLine("");
+            }
+
+            static int[] ElevaArrayAlQuadrato(int[] array)
+            {
+                Console.WriteLine("Nuovo array:");
+                int[] copiaArr = (int[]) array.Clone();
+                for (int i = 0; i < copiaArr.Length; i++)
+                {
+                    int res = copiaArr[i] * copiaArr[i];
+                    Console.WriteLine($"Elemento {i + 0}: {res}");
+                }
+
+                return copiaArr;
+            }
         }
     }
 }
