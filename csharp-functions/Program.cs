@@ -138,30 +138,57 @@
             static void StampaArray(int[] array) //funzione per la stampa dell'array che ha come parametro un array di interi
             {
                 Console.WriteLine("1. Stampa dell'array");
+                Console.Write("[");
                 for (int i = 0; i < array.Length; i++) //Ciclo per Stampare ogni elemento all'interno dell'array
                 {
-                    Console.WriteLine($"Elemento {i + 0}: {array[i]}");
+                    Console.Write(array[i]);
+                    if (i < array.Length - 1)
+                    {
+                        Console.Write(',');
+                    }
                 }
+                Console.Write("]");
+
+                Console.WriteLine("");
                 Console.WriteLine("");
             }
 
             static int[] StampaElevaArrayAlQuadrato(int[] array) //funzione per la stampa dell'array che ha come parametro un array di interi
             {
-                Console.WriteLine("2. Stampa dell'array originale e calcolo del qaudrato dei numeri all'itnerno del nuovo array creato");
+                Console.WriteLine("2. Stampa dell'array originale e calcolo del qaudrato dei numeri all'interno del nuovo array creato");
                 Console.WriteLine("Array originale: ");
+
+                Console.Write("[");
                 for (int i = 0; i < array.Length; i++) //Ciclo per Stampare ogni elemento all'interno dell'array
                 {
-                    Console.WriteLine($"Elemento {i + 0}: {array[i]}");
+                    Console.Write(array[i]);
+                    if (i < array.Length - 1)
+                    {
+                        Console.Write(',');
+                    }
                 }
+                Console.Write("]");
+
+                Console.WriteLine("");
 
                 Console.WriteLine("Nuovo array:");
                 int[] copiaArr = (int[])array.Clone(); //Clono l'array orinale
+
+                Console.Write("[");
                 for (int i = 0; i < copiaArr.Length; i++) //Ciclo per calcolare il quadrato di tutti gli elementi dell'array clonato
                 {
                     int res = copiaArr[i] * copiaArr[i];
-                    Console.WriteLine($"Elemento {i + 0}: {res}");
+                    Console.Write(res);
+                    if (i < copiaArr.Length - 1)
+                    {
+                        Console.Write(',');
+                    }
                 }
+                Console.Write("]");
+
                 Console.WriteLine("");
+                Console.WriteLine("");
+
                 return copiaArr;
             }
 
@@ -184,12 +211,20 @@
             static int[] ElevaArrayAlQuadrato(int[] array) //Funzione per calcolare il quadrato degli elementi all'interno dell'array clonato
             {
                 Console.WriteLine("4. Calcolo quadrato elementi dell'array");
+                Console.Write("[");
                 for (int i = 0; i < array.Length; i++) //Ciclo per calcolare il quadrato di tutti gli elementi dell'array clonato
                 {
                     int res = array[i] * array[i];
-                    Console.WriteLine($"Elemento {i + 0}: {res}");
+                    Console.Write(res);
+                    if (i < array.Length - 1)
+                    {
+                        Console.Write(',');
+                    }
                 }
+                Console.Write("]");
+
                 Console.WriteLine("");
+
                 return array;
             }
         }
