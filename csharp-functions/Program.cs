@@ -119,7 +119,17 @@
         //5. Snacks5
         public static void Snacks5()
         {
-            int[] numArr = { 2, 6, 7, 5, 3, 9 };
+            Console.WriteLine("Inserisci Lunghezza Array: "); //Chiedo all'utente di inserire un numero per la capacità dell'array
+            int lungArr  = Convert.ToInt32(Console.ReadLine());
+            int[] numArr = new int[lungArr]; // viene creato un nuovo array vuoto con quella dimensione inserita dall'utente e viene memorizzato nella variabile numArr
+
+            Console.WriteLine("Inserisci " + lungArr + " numeri nell'array:"); 
+            for (int i = 0; i < lungArr; i++) // ciclo for per inserire n numeri in base alla lunghezza da lui inserita
+            {
+                 numArr[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("");
+
             StampaArray(numArr);
             StampaElevaArrayAlQuadrato(numArr);
             SommaElementiArray(numArr);
@@ -127,8 +137,7 @@
 
             static void StampaArray(int[] array) //funzione per la stampa dell'array che ha come parametro un array di interi
             {
-                Console.WriteLine("1");
-                Console.WriteLine("Array originale: ");
+                Console.WriteLine("1. Stampa dell'array");
                 for (int i = 0; i < array.Length; i++) //Ciclo per Stampare ogni elemento all'interno dell'array
                 {
                     Console.WriteLine($"Elemento {i + 0}: {array[i]}");
@@ -138,7 +147,7 @@
 
             static int[] StampaElevaArrayAlQuadrato(int[] array) //funzione per la stampa dell'array che ha come parametro un array di interi
             {
-                Console.WriteLine("2");
+                Console.WriteLine("2. Stampa dell'array originale e calcolo del qaudrato dei numeri all'itnerno del nuovo array creato");
                 Console.WriteLine("Array originale: ");
                 for (int i = 0; i < array.Length; i++) //Ciclo per Stampare ogni elemento all'interno dell'array
                 {
@@ -159,7 +168,7 @@
 
             static int SommaElementiArray(int[] array) //Funzione per la somma degli elementi all'interno dell'array
             {
-                Console.WriteLine("3");
+                Console.WriteLine("3. Somma elementi dell'array");
                 int sum = 0;
 
                 for (var i = 0; i < array.Length; i++) //ciclo per far stampare il risultato sommando i numeri all'interno dell'array
@@ -174,16 +183,14 @@
 
             static int[] ElevaArrayAlQuadrato(int[] array) //Funzione per calcolare il quadrato degli elementi all'interno dell'array clonato
             {
-                Console.WriteLine("4");
-                Console.WriteLine("Nuovo array:");
-                int[] copiaArr = (int[])array.Clone(); //Clono l'array orinale
-                for (int i = 0; i < copiaArr.Length; i++) //Ciclo per calcolare il quadrato di tutti gli elementi dell'array clonato
+                Console.WriteLine("4. Calcolo quadrato elementi dell'array");
+                for (int i = 0; i < array.Length; i++) //Ciclo per calcolare il quadrato di tutti gli elementi dell'array clonato
                 {
-                    int res = copiaArr[i] * copiaArr[i];
+                    int res = array[i] * array[i];
                     Console.WriteLine($"Elemento {i + 0}: {res}");
                 }
                 Console.WriteLine("");
-                return copiaArr;
+                return array;
             }
         }
     }
