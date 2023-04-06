@@ -6,11 +6,41 @@
     {
         static void Main()
         {
-        /* Snacks1();
-           Snacks2();
-           Snacks3();
-           Snacks4(); */
-           Snacks5();
+          /*Snacks1();
+            Snacks2();
+            Snacks3();
+            Snacks4();*/
+            Snacks5();
+        }
+
+        //1. Snacks1
+        public static void Snacks1()
+        {
+            int[] array = { 2, 6, 7, 5, 3, 9 };
+            StampaArray("Array: ", array);
+            Console.WriteLine("");
+        }
+
+        //2. Snacks2
+        public static void Snacks2()
+        {
+            Console.WriteLine("Quadrato: " + Quadrato(5));
+        }
+
+        //3. Snacks3
+        public static void Snacks3()
+        {
+            int[] array = { 2, 6, 7, 5, 3, 9 };
+            int[] newArr = ElevaArrayAlQuadrato(array);
+            StampaArray("Array al Quadrato", newArr);
+            Console.WriteLine("");
+        }
+
+        //4. Snacks4
+        public static void Snacks4()
+        {
+            int[] array = { 2, 6, 7, 5, 3, 9 };
+            Console.WriteLine("Somma degli elementi: " +  SommaElementiArray(array));
         }
 
         //5. Snacks5
@@ -44,11 +74,12 @@
             Console.WriteLine("Somma elementi Array Originale: " + sum);
 
             //Viene fatto il quadrato degli elementi dell'array e poi vengono sommati
-            Console.WriteLine("Somma elementi Array Modificato: " + SommaElementiArray(ElevaArrayAlQuadrato(newArr)));
+            Console.WriteLine("Somma elementi Array Modificato: " + SommaElementiArray(ElevaArrayAlQuadrato(numArr)));
         }
 
-
-        //funzione del BONUS
+        /*++++++++++++++++++++++++++++++++
+                funzione del BONUS
+        ++++++++++++++++++++++++++++++++++*/
 
         //Funzione stampa array
         public static void StampaArray(string title, int[] array) //funzione per la stampa dell'array che ha come parametro un array di interi
